@@ -1,0 +1,9 @@
+# Keep Netlify's base directory at the repository root.
+# Set the package directory to apps/admin in the Netlify UI.
+[build]
+command = "bun run build:admin"
+publish = "apps/admin/.next"
+
+[build.environment]
+BUN_VERSION = "1.4.3"
+NODE_VERSION = "24"
