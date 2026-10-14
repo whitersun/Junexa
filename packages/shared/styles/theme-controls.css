@@ -1,0 +1,48 @@
+@layer legacy {
+    /* Stable icons even before React hydrates the saved theme. */
+    .theme-sun,
+    :root[data-theme="dark"] .theme-moon {
+        display: none;
+    }
+    :root[data-theme="dark"] .theme-sun {
+        display: block;
+    }
+
+    input,
+    select,
+    textarea {
+        color: inherit;
+        accent-color: var(--orange);
+    }
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--junexa-muted);
+        opacity: 1;
+    }
+    .language-switch select option {
+        background: var(--surface);
+        color: var(--dark);
+    }
+    .header-right {
+        flex-wrap: wrap;
+    }
+
+    @media (min-width: 701px) {
+        header {
+            height: auto;
+            min-height: 76px;
+            padding-block: 12px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .product {
+            transition: none;
+        }
+        .product:hover {
+            transform: none;
+        }
+    }
+}

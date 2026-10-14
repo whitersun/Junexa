@@ -1,0 +1,9 @@
+// Existing layouts live in the legacy layer; Tailwind utilities take priority.
+@use "styles/base";
+@use "styles/shell";
+@use "styles/menu";
+@use "styles/cart";
+@use "styles/dashboard";
+@use "styles/dialogs";
+@use "styles/responsive";
+@use "styles/readability";

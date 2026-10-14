@@ -1,0 +1,53 @@
+/* shadcn names resolve to the existing Junexa light/dark palette. */
+:root {
+    --background: var(--cream);
+    --foreground: var(--dark);
+    --card: var(--surface);
+    --card-foreground: var(--dark);
+    --popover: var(--surface);
+    --popover-foreground: var(--dark);
+    --primary: var(--orange);
+    --primary-foreground: var(--on-accent);
+    --secondary: var(--surface-subtle);
+    --secondary-foreground: var(--text-secondary);
+    --muted: var(--surface-subtle);
+    --muted-foreground: var(--junexa-muted);
+    --accent: var(--accent-soft);
+    --accent-foreground: var(--junexa-accent);
+    --destructive: var(--danger-text);
+    --destructive-foreground: var(--surface);
+    --input: var(--border);
+    --ring: var(--focus);
+    --radius: 0.625rem;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-surface: var(--surface);
+    --color-subtle: var(--surface-subtle);
+    --color-divider: var(--border);
+    --color-brand: var(--junexa-accent);
+    --color-brand-hover: var(--accent-fill-hover);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}

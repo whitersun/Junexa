@@ -1,0 +1,19 @@
+/* Keep existing layouts below component utilities during the migration. */
+@layer theme, base, legacy, components, utilities;
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+@import "./tokens.css";
+
+@source "../components";
+@source "../../../shared";
+@source "../../../../apps/menu/app";
+@source "../../../../apps/admin/app";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant data-open (&[data-state="open"]);
+@custom-variant data-closed (&[data-state="closed"]);
+@custom-variant data-disabled (&[data-disabled]);
+
+@layer base {
+    * { @apply border-border; }
+}

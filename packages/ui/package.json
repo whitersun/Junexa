@@ -1,0 +1,26 @@
+{
+  "name": "@junexa/ui",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./components/*": "./src/components/*.tsx",
+    "./lib/*": "./src/lib/*.ts",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./styles/*": "./src/styles/*"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.0.0",
+    "tw-animate-css": "^1.0.0",
+    "radix-ui": "latest"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "lucide-react": "*"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "radix-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@junexa/ui/components",
+    "utils": "@junexa/ui/lib/utils",
+    "ui": "@junexa/ui/components",
+    "lib": "@junexa/ui/lib",
+    "hooks": "@junexa/ui/hooks"
+  }
+}

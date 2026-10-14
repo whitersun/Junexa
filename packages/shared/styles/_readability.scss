@@ -1,0 +1,293 @@
+@use "tokens";
+
+@layer legacy {
+    // Space for the shared, larger type scale without clipping labels or controls.
+    body {
+        line-height: 1.6;
+    }
+    .sidebar {
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+    .sidebar > * {
+        flex-shrink: 0;
+    }
+    .page-heading {
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .page-heading p:not(.eyebrow) {
+        line-height: 1.75;
+    }
+    .hero {
+        height: auto;
+        min-height: 330px;
+    }
+    .hero-text {
+        width: 62%;
+    }
+    .hero h2 {
+        letter-spacing: -0.8px;
+    }
+    .hero-note {
+        max-width: 90%;
+    }
+    .menu-title {
+        flex-wrap: wrap;
+    }
+    .search {
+        min-height: 44px;
+        flex: 0 1 290px;
+    }
+    .search input {
+        width: 100%;
+        min-width: 0;
+        font-size: tokens.font(body);
+    }
+    .search kbd {
+        display: none;
+    }
+    .result-line {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .product-info {
+        padding: 18px 16px;
+    }
+    .product h3 {
+        font-size: tokens.font(lead);
+        line-height: 1.5;
+    }
+    .product-info p {
+        color: var(--text-secondary);
+        min-height: 46px;
+    }
+    .product-name {
+        flex-wrap: wrap;
+    }
+    .product-bottom {
+        gap: 10px;
+    }
+    .product-bottom strong {
+        font-size: tokens.font(lead);
+    }
+    .add-button {
+        min-width: 40px;
+        height: 40px;
+        padding: 6px;
+    }
+    .categories button {
+        min-height: 44px;
+    }
+    .cart {
+        min-height: 0;
+    }
+    .cart-items {
+        min-height: 0;
+    }
+    .cart-empty {
+        padding: 28px 0 16px;
+    }
+    .cart-summary {
+        flex-shrink: 0;
+    }
+    .cart h2 {
+        font-size: tokens.font(subtitle);
+    }
+    .cart-item h4 {
+        line-height: 1.5;
+        padding-right: 14px;
+    }
+    .quantity button {
+        width: 30px;
+        height: 30px;
+    }
+    .order-note {
+        margin-bottom: 14px;
+    }
+    .sum-total {
+        flex-wrap: wrap;
+    }
+    .checkout {
+        min-height: 48px;
+        line-height: 1.5;
+    }
+    .secure {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .workspace {
+        gap: 8px;
+    }
+    .workspace small {
+        line-height: 1.5;
+    }
+    .help-card svg {
+        display: none;
+    }
+    .nav-label {
+        letter-spacing: 0.6px;
+    }
+    .modal {
+        width: 540px;
+    }
+    .modal h2 {
+        padding-right: 20px;
+        line-height: 1.4;
+    }
+    .modal input,
+    .modal select {
+        min-height: 46px;
+    }
+    .modal .checkbox input {
+        min-height: auto;
+    }
+    .stat strong {
+        overflow-wrap: anywhere;
+    }
+    .stat small {
+        line-height: 1.6;
+        display: block;
+    }
+    .bar-col > span {
+        white-space: nowrap;
+    }
+    footer {
+        gap: 16px;
+        flex-wrap: wrap;
+        line-height: 1.7;
+    }
+    .language-switch select {
+        max-width: 130px;
+        min-height: 30px;
+    }
+
+    @media (min-width: 951px) {
+        .sidebar {
+            width: 250px;
+        }
+        .body {
+            margin-left: 250px;
+        }
+        .order-layout {
+            grid-template-columns: minmax(0, 1fr) 340px;
+        }
+    }
+    @media (min-width: 701px) and (max-width: 1450px) {
+        .product-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .admin-layout .product-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .hero-text {
+            width: 100%;
+            padding-right: 27%;
+        }
+        .hero-image {
+            width: 26%;
+            border-radius: 0;
+        }
+        .hero-deco,
+        .hero-note {
+            display: none;
+        }
+    }
+    @include tokens.below(tablet) {
+        .order-layout {
+            grid-template-columns: minmax(0, 1fr) 310px;
+        }
+        .admin-layout .product-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @include tokens.below(mobile) {
+        header {
+            height: auto;
+            min-height: 84px;
+            padding: 10px 17px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .breadcrumb {
+            flex-basis: 100%;
+            font-size: tokens.font(caption);
+        }
+        .header-right {
+            margin-left: auto;
+        }
+        .sidebar .brand {
+            font-size: 24px;
+        }
+        .hero {
+            min-height: 0;
+        }
+        .hero-text {
+            width: 100%;
+            padding: 24px 22px 205px;
+        }
+        .hero h2 {
+            font-size: tokens.font(title);
+        }
+        .hero-image {
+            width: 100%;
+            height: 180px;
+            top: auto;
+            bottom: 0;
+            border-radius: 0;
+        }
+        .hero-image img {
+            object-position: center 55%;
+        }
+        .hero-note {
+            display: flex;
+            bottom: 14px;
+            right: 14px;
+        }
+        .hero-deco {
+            display: none;
+        }
+        .search {
+            flex-basis: 100%;
+        }
+        .search input {
+            width: 100%;
+        }
+        .cart.mobile-open {
+            min-height: 0;
+        }
+        .cart-summary {
+            margin-top: 10px;
+        }
+        .cart-item h4 {
+            font-size: tokens.font(body);
+        }
+        .form-row {
+            flex-wrap: wrap;
+        }
+        .modal .form-row > label {
+            flex-basis: 100%;
+        }
+        .chart-card {
+            overflow-x: auto;
+        }
+        .chart {
+            min-width: 440px;
+        }
+        .page-heading {
+            flex-wrap: wrap;
+        }
+        .stat {
+            padding: 16px;
+        }
+    }
+    @media (max-width: 480px) {
+        .product-grid,
+        .admin-layout .product-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .product-image {
+            height: 200px;
+        }
+    }
+}

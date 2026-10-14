@@ -1,0 +1,42 @@
+{
+    "name": "junexa",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "bun run --parallel --filter \"@junexa/menu\" --filter \"@junexa/admin\" dev",
+        "dev:menu": "bun run --cwd apps/menu dev",
+        "dev:admin": "bun run --cwd apps/admin dev",
+        "db:init": "bun scripts/db.mjs init",
+        "db:seed": "bun scripts/db.mjs seed",
+        "db:setup": "bun scripts/db.mjs setup",
+        "build:menu": "bun run --cwd apps/menu build",
+        "build:admin": "bun run --cwd apps/admin build",
+        "start:menu": "bun run --cwd apps/menu start",
+        "start:admin": "bun run --cwd apps/admin start",
+        "typecheck": "tsc --noEmit -p apps/menu/tsconfig.json && tsc --noEmit -p apps/admin/tsconfig.json && tsc --noEmit -p packages/ui/tsconfig.json",
+        "ui:add": "bun x --bun shadcn@latest add --cwd packages/ui",
+        "test": "bun run --cwd apps/admin test"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "latest",
+        "lucide-react": "latest",
+        "next": "latest",
+        "pg": "latest",
+        "react": "latest",
+        "react-dom": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "latest",
+        "@types/pg": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "19.3.0",
+        "sass": "^1.105.1",
+        "typescript": "latest",
+        "tailwindcss": "^4.3.3",
+        "@tailwindcss/postcss": "^4.3.3"
+    },
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ]
+}

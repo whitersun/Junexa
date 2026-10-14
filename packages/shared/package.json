@@ -1,0 +1,15 @@
+{
+  "name": "@junexa/shared",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./*": "./*"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "lucide-react": "*"
+  },
+  "dependencies": {
+    "@junexa/ui": "workspace:*"
+  }
+}

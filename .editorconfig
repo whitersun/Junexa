@@ -1,0 +1,19 @@
+# This is the top-most EditorConfig file. Do not look in parent folders.
+root = true
+
+# Rules for all files
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Override specific rules for Web files (HTML, JS, CSS, JSON)
+[*.{html,js,css,json}]
+indent_size = 4
+
+# Override rules for Makefiles (Makefiles require actual tab characters)
+[Makefile]
+indent_style = tab

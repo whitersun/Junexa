@@ -1,0 +1,65 @@
+@use "tokens";
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;450;500;550;600;650;700;750;800&display=swap");
+@layer legacy {
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--dark);
+        font-family: "Be Vietnam Pro", Arial, sans-serif;
+        font-size: tokens.font(body);
+    }
+    button,
+    input,
+    select {
+        font: inherit;
+    }
+    button,
+    a,
+    input,
+    select {
+        -webkit-tap-highlight-color: transparent;
+    }
+    button {
+        cursor: pointer;
+    }
+    button {
+        border: 0;
+        background: none;
+        color: inherit;
+    }
+    button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+    button:focus-visible,
+    a:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 3px;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    input,
+    select {
+        outline: none;
+    }
+    input:focus,
+    select:focus {
+        border-color: var(--junexa-accent) !important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        margin-top: 0;
+    }
+    svg {
+        flex-shrink: 0;
+    }
+}
