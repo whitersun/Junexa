@@ -9,14 +9,15 @@ export async function POST(req: Request) {
             { status: 401 },
         );
     if (
-        !process.env.R2_ENDPOINT ||
-        !process.env.R2_BUCKET ||
-        !process.env.R2_PUBLIC_URL ||
-        !process.env.R2_ACCESS_KEY_ID ||
-        !process.env.R2_SECRET_ACCESS_KEY
+        !process.env.STORAGE_ENDPOINT ||
+        !process.env.STORAGE_REGION ||
+        !process.env.STORAGE_BUCKET ||
+        !process.env.STORAGE_PUBLIC_URL ||
+        !process.env.STORAGE_ACCESS_KEY_ID ||
+        !process.env.STORAGE_SECRET_ACCESS_KEY
     )
         return Response.json(
-            { error: "Chưa cấu hình R2. Bạn có thể dùng URL ảnh trước." },
+            { error: "Chưa cấu hình lưu ảnh. Bạn có thể dùng URL ảnh trước." },
             { status: 503 },
         );
     try {
@@ -42,23 +43,24 @@ export async function POST(req: Request) {
         if (!valid) throw Error("Nội dung ảnh không hợp lệ");
         const key = `menu/${crypto.randomUUID()}.${f.type.split("/")[1]}`;
         const client = new S3Client({
-            region: "auto",
-            endpoint: process.env.R2_ENDPOINT,
+            region: process.env.STORAGE_REGION,
+            endpoint: process.env.STORAGE_ENDPOINT,
+            forcePathStyle: true,
             credentials: {
-                accessKeyId: process.env.R2_ACCESS_KEY_ID,
-                secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+                accessKeyId: process.env.STORAGE_ACCESS_KEY_ID,
+                secretAccessKey: process.env.STORAGE_SECRET_ACCESS_KEY,
             },
         });
         await client.send(
             new PutObjectCommand({
-                Bucket: process.env.R2_BUCKET,
+                Bucket: process.env.STORAGE_BUCKET,
                 Key: key,
                 Body: buffer,
                 ContentType: f.type,
             }),
         );
         return Response.json({
-            url: `${process.env.R2_PUBLIC_URL.replace(/\/$/, "")}/${key}`,
+            url: `${process.env.STORAGE_PUBLIC_URL.replace(/\/$/, "")}/${key}`,
         });
     } catch (e) {
         return Response.json({ error: (e as Error).message }, { status: 400 });

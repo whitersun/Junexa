@@ -208,7 +208,7 @@ export const translations: Record<string, readonly [string, string]> = {
     "Danh mục": ["Category", "分類"],
     "Mô tả": ["Description", "說明"],
     "URL hình ảnh": ["Image URL", "圖片網址"],
-    "Tải ảnh lên R2": ["Upload image to R2", "上傳圖片至 R2"],
+    "Tải ảnh lên": ["Upload image", "上傳圖片"],
     "Đang bán": ["Available", "供應中"],
     "Đang lưu...": ["Saving...", "儲存中…"],
     "Lưu món": ["Save dish", "儲存餐點"],

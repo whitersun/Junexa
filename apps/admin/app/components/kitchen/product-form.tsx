@@ -106,7 +106,7 @@ export function ProductForm({
                 </label>
                 <label className="upload">
                     <Upload size={16} />
-                    {t("Tải ảnh lên R2")}
+                    {t("Tải ảnh lên")}
                     <input
                         type="file"
                         accept="image/jpeg,image/png,image/webp"
